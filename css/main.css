@@ -46,8 +46,8 @@
 
 /*btn*/
 [class^=btn], [class*=btn] { display: inline-block; position: relative; vertical-align: middle; width: 18%; font-size: 1.1em; line-height: 2em; margin: 0 4%; font-weight: bold; text-align: center; white-space: nowrap;}
-[class^=btn]:before, [class*=btn]:before { content: ""; display: block; width: 100%; padding-bottom: 100%; border-radius: 12%; background-color: #fcf3e8; border: solid #222 0.2em; margin-left: -0.2em;}
-[class^=btn]:after, [class*=btn]:after { content: ""; position: absolute; top: 0; left: 0; width: 100%; padding-bottom: 100%; margin-top: 0.2em; background: url(../img/btn.png) no-repeat 0 9999%; background-size: 100% auto; }
+[class^=btn]:before, [class*=btn]:before { content: ""; display: block; width: 100%; padding-bottom: 50%; border-radius: 15%; background-color: #fcf3e8; border: solid #222 0.2em; margin-left: -0.2em;}
+[class^=btn]:after, [class*=btn]:after { content: ""; position: absolute; top: 0; left: 0; width: 100%; padding-bottom: 100%; margin-top: -0.8em; background: url(../img/btn.png) no-repeat 0 9999%; background-size: 100% auto; }
 [class^=btn]:active:before, [class*=btn]:active:before { background-color: #bbe9fe;} 
 .btn1:after { background-position-y: 0%; margin-left: -3%;}
 .btn2:after { background-position-y: 10%; margin-left: 3%;}
@@ -78,7 +78,7 @@
 .s2 ol li a { position: absolute; left: 0; top: 50%; width: 100%; margin-top: -46%; text-align: center; line-height: 2em; font-weight: bold; }
 .s2 ol li a:before { content: ""; display: block; width: 64%; padding-bottom: 64%; margin: 0 auto; border: solid #222 0.2em; border-radius: 12%;  background: #fcf3e8 url(../img/item-class.png) no-repeat 0 0; background-size: 100% auto;}
 .s2 ol li a:active:before { background-color: #bbe9fe;}
-.s2 ol li:nth-child(2) a:before { background-position-y: 20%;}
+.s2 ol li:nth-child(2) a:before { background-position-y: 18%;}
 .s2 ol li:nth-child(3) a:before { background-position-y: 34%;}
 .s2 ol li:nth-child(4) a:before { background-position-y: 50%;}
 .s2 ol li:nth-child(5) a:before { background-position-y: 66%;}
@@ -93,7 +93,7 @@
 .s2 ul li { box-sizing: content-box; width: 66%; padding-bottom: 66%;  margin: 18% auto; border-radius: 1em; overflow: hidden; background-image: url(../img/item.png);}
 .s2 ul li.curr { background-color: #fadd79;}
 .s2 ul li.off { opacity: 0.3;}
-.s2 footer { top: 57%; text-align: right; margin: 48% 0 0 -10%;}
+.s2 footer { top: 57%; text-align: right; margin: 54% 0 0 -10%;}
 .s2 footer a { width: 16%; margin: 0 4.5%; line-height: 2.2em;}
 .s2 figure { z-index: 0; left: auto; right: 0; top: 55%; margin-top: -83%; width: 72%; padding-bottom: 132.8%; }
 .s2 figure p { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
@@ -129,18 +129,20 @@
 .s3 figure .title { height: 100%; background-image: url(../img/title.png);}
 .s3 figure .ewm { width: 12.5%; padding-bottom: 12.5%; margin: 137.03125% 0 0 3.8%; background-image: url(../img/ewm.png);}
 .s3 figure .name { text-align: center; line-height: 0.9em; padding: 4.4% 0 2%;}
-.s3 figure .name * { font-weight: bold;}
-.s3 figure .name>span { display: inline-block; text-align: left; transform: scale(0.7); transform-origin: 50% 0;}
+.s3 figure .name * {     font-weight: 600;line-height: 1em;}
+.s3 figure .name>span { display: inline-block; text-align: left; transform: scale(1); transform-origin: 50% 0;}
 .s3 figure .name big { font-size: 1.2em;}
-.s3 figure .name big font { margin-right: 0.5em;}
-.s3 figure .name big font:empty:after { content: '白天站到晚上'; color: #ccc;}
-.s3 figure .name big font:empty:before { -webkit-animation: flashLoop1 0.8s step-end infinite both; content: '┃'; font-weight: bold; float: left; margin: 0 -1em 0 -0.5em;}
+.s3 figure .name big font { margin-right: 2.5em;}
+.s3 figure.role1 .name big font:empty:after { content: '曾經的六一扛把子'; color: #ccc;}
+.s3 figure.role2 .name big font:empty:after { content: '曾經的幼兒園一枝花'; color: #ccc;}
+.s3 figure .name big font:empty:before { -webkit-animation: flashLoop1 0.8s step-end infinite both; content: '┃'; margin: 0em;}
 .s3 figure .name small { font-size: 0.6em; }
 .s3 figure .name small font { margin-left: 0.5em;}
-.s3 figure .name small font:empty:after { content: '强壮草莓星人'; color: #ccc;}
+.s3 figure.role1 .name small font:empty:after { content: '光著膀子喝可樂'; color: #ccc;}
+.s3 figure.role2 .name small font:empty:after { content: '健美褲提到腰上劈叉'; color: #ccc;}
 .s3 footer { top: 50%; margin-top: 51%; padding: 0 4%;}
 .s3 footer h3 { float: right; margin-top: 1.2%;}
-.s3 footer h3 a { display: block; font-size: 1.1em; font-weight: bold; background: #fdec9c; border:solid #222 0.22em; text-align: center; overflow: hidden; width: 4.2em; height: 4.2em; line-height: 1em; border-radius: 100%;}
+.s3 footer h3 a { display: block; font-size: 1.1em; font-weight: bold; background: #fcf3e8; border:solid #222 0.22em; text-align: center; overflow: hidden; width: 4.2em; height: 4.2em; line-height: 1em; border-radius: 15%;}
 .s3 footer h3 a:before { content: ""; display: block; height: 0.95em;}
 .s3 footer h3 a:active { background: #bbe9fe;}
 .s3 footer menu { position: relative; margin:0 22% 0 2%; overflow: hidden; }

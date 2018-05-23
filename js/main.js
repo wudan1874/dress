@@ -154,6 +154,7 @@ function appStart(){
 		setTimeout(function(){ app.sound.click.play(); });
 		if(!app.poster.sex){ myAlert('请先选择性别！'); return; }
 		$(".s2 figure").attr('class', 'role'+app.poster.sex).children('p').removeAttr('style');
+		$(".s3 figure").attr('class', 'role'+app.poster.sex).children('p').removeAttr('style');
 		$(".s2 ol").removeClass('selected').children('li').removeClass('curr');
 		$(".s2 menu").hide();
 		createItemsList(app.poster.sex);
