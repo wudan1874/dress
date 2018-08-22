@@ -14,18 +14,17 @@
   a. 主页面
 
     扫描二维码或者链接进入主界面，选择人物性别（男 / 女）, 点击开始生成。
-    
+ 
  ![image](https://github.com/wudan1874/dress/blob/master/img-founder/home.jpg)
 
   b. 进入换装界面，点击表情、发型、衣服、下装、鞋子、配饰任一种可以选择其分类下的多种装扮,选择完毕后生成海报。
   
  ![image](https://github.com/wudan1874/dress/blob/master/img-founder/index1.jpg)
- 
   ![image](https://github.com/wudan1874/dress/blob/master/img-founder/index2.jpg)
- 
  ![image](https://github.com/wudan1874/dress/blob/master/img-founder/index0.jpg)
 
   c .  海报页用户填写信息，并选择喜欢的背景图片，进入生成后的海报页。
+  
   ![image](https://github.com/wudan1874/dress/blob/master/img-founder/page2.jpg)
    ![image](https://github.com/wudan1874/dress/blob/master/img-founder/post.jpg)
    
