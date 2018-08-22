@@ -10,7 +10,7 @@
 换装H5（再见六一）访问二维码：
  访问链接：http://events.daiplanet.com/dress
  
-  ![image](https://github.com/wudan1874/dress/blob/master/img_founder/QRcode.png)
+  ![image](https://github.com/wudan1874/dress/blob/master/img-founder/QRcode.png)
  
    ![image](https://github.com/wudan1874/dress/blob/master/QRcode.png)
  
