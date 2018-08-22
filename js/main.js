@@ -124,42 +124,42 @@ function appStart(){
 			typeof(callback)=='function' && callback();
 		});
 	};
-	
-	
-	
-	/*s1*/
-	function createItemsList(sex){
-		if(sex!=1 && sex!=2){ sex=1; }
-		var html='', arr;
-		for(var i=0; i<=5; i++){
-			html+='<ul>';
-			arr = app.poster.items[i][sex-1];
 
-			$.each(arr, function() {
-				html+='<li style="background-image: url(img/item'+i+'/i'+i+'-'+this+'s.png);" data-img="i'+i+'-'+this+'.png"></li>';
-			});
-			html+='</ul>';
-		};
-		$(".s2 menu>div").html(html);
-		$(".s2 menu ul:eq(0) li:eq(0), .s2 menu ul:eq(1) li:eq(0), .s2 menu ul:eq(2) li:eq(0),.s2 menu ul:eq(3) li:eq(0)").trigger('click');
-	};
-	$(".s1 h3 a").on(app.evtClick, function(){
-		if($(this).is('.curr')){ return; }
-		$(this).addClass('curr').siblings('a').removeClass('curr');
-		app.poster.sex = $(this).index()==0 ? 1 : 2;
-		app.sound.click.play();
-		// console.log(app.poster,2)
-	});
-	$(".s1 h4 a").on(app.evtClick, function(){
-		setTimeout(function(){ app.sound.click.play(); });
-		if(!app.poster.sex){ myAlert('请先选择性别！'); return; }
-		$(".s2 figure").attr('class', 'role'+app.poster.sex).children('p').removeAttr('style');
-		$(".s3 figure").attr('class', 'role'+app.poster.sex).children('p').removeAttr('style');
-		$(".s2 ol").removeClass('selected').children('li').removeClass('curr');
-		$(".s2 menu").hide();
-		createItemsList(app.poster.sex);
-		slideTo('.s2');
-	});
+
+
+    /*s1*/
+    function createItemsList(sex){
+        if(sex!=1 && sex!=2){ sex=1; }
+        var html='', arr;
+        for(var i=0; i<=5; i++){
+            html+='<ul>';
+            arr = app.poster.items[i][sex-1];
+
+            $.each(arr, function() {
+                html+='<li style="background-image: url(img/item'+i+'/i'+i+'-'+this+'s.png);" data-img="i'+i+'-'+this+'.png"></li>';
+            });
+            html+='</ul>';
+        };
+        $(".s2 menu>div").html(html);
+        $(".s2 menu ul:eq(0) li:eq(0), .s2 menu ul:eq(1) li:eq(0), .s2 menu ul:eq(2) li:eq(0),.s2 menu ul:eq(3) li:eq(0)").trigger('click');
+    };
+    $(".s1 h3 a").on(app.evtClick, function(){
+        if($(this).is('.curr')){ return; }
+        $(this).addClass('curr').siblings('a').removeClass('curr');
+        app.poster.sex = $(this).index()==0 ? 1 : 2;
+        app.sound.click.play();
+        // console.log(app.poster,2)
+    });
+    $(".s1 h4 a").on(app.evtClick, function(){
+        setTimeout(function(){ app.sound.click.play(); });
+        if(!app.poster.sex){ myAlert('请先选择性别！'); return; }
+        $(".s2 figure").attr('class', 'role'+app.poster.sex).children('p').removeAttr('style');
+        $(".s3 figure").attr('class', 'role'+app.poster.sex).children('p').removeAttr('style');
+        $(".s2 ol").removeClass('selected').children('li').removeClass('curr');
+        $(".s2 menu").hide();
+        createItemsList(app.poster.sex);
+        slideTo('.s2');
+    });
 	
 	
 	/*s2*/
@@ -211,7 +211,6 @@ function appStart(){
 		setTimeout(function(){ app.sound.click.play(); });
 		var type = $(this).parent().index();//部位的index
 
-		console.log('type='+type)
 
 		if($(this).is('.curr')){
 			$(this).removeClass('curr');
@@ -276,7 +275,7 @@ function appStart(){
 				about = $(".s2 menu ul:eq(2) li.curr").attr('data-img');
 				if(about && temp){
 					about = about.replace('.png', '').split('-')[1];
-console.log('上衣ID='+about,'裤子='+temp)
+
 					if(app.poster.exPants[about] && !app.poster.exLevel[3][temp]){
 						p[0].preZindex = p.css('z-index');
 						p.css('z-index', app.poster.exPants[about]+1);
@@ -412,13 +411,13 @@ console.log('上衣ID='+about,'裤子='+temp)
 		//ctx.drawImage(ewm, 0, 0, ewm.naturalWidth, ewm.naturalHeight, 26, 877, 80, 80);
 		ctx.textBaseline="top";
 		ctx.fillStyle = '#111';
-		ctx.font = 'bold 25px arial';
-		txt = app.poster.label+'\n\n/是我';
-		txtX = (canvas.width-ctx.measureText(txt).width)*0.5
+		ctx.font = 'bold 30px arial';
+		txt = '我是\n\n'+app.poster.label;
+		txtX = (canvas.width-ctx.measureText(txt).width)*0.4
 		ctx.fillText(txt, txtX, 25);
-		ctx.font = 'bold 12px arial';
-		txt = '我是\n\n'+app.poster.name;
-		ctx.fillText(txt, txtX, 54);
+		ctx.font = 'bold 18px arial';
+		txt = '/我小时候最喜欢\n\n'+app.poster.name;
+		ctx.fillText(txt, txtX, 59);
 		poster = new Image();
 		poster2 = new Image();
 		$("body").append(poster)
@@ -489,41 +488,110 @@ console.log('上衣ID='+about,'裤子='+temp)
 		$(".s3 figure .name font:eq(1)").text(app.poster.name);
 		$(".s3>center").hide();
 	});
-	$(".s3 footer h3 a").on(app.evtClick, function(){
-		setTimeout(function(){ app.sound.click.play(); });
-		if(!app.poster.label || !app.poster.name){ myAlert('请填写您的标签和名字！'); return; }
-		if(!app.poster.wordCheck){
-			loadingShow();
-			checkWord(app.poster.label, function(r){
-				if(!r){ loadingHide(); myAlert('输入内容检查错误，请重试！'); return; }
-				if(r!=1){ loadingHide(); myAlert('您输入的标签违规，请重新输入！'); return; }
-				checkWord(app.poster.name, function(r){
-					if(!r){ loadingHide(); myAlert('输入内容检查错误，请重试！'); return; }
-					if(r!=1){ loadingHide(); myAlert('您输入的名字违规，请重新输入！'); return; }
-					app.poster.wordCheck = true;
-					createPoster(function(poster, poster2){
-						app.poster.img1 = poster;
-						app.poster.img2 = poster2;
-						$(".s4 figure img, .s4 .btn3 img, .s5 .btn3 img").remove();
-						$(".s4 figure, .s4 .btn3").append(poster);
-						$(".s5 figure, .s5 .btn3").append(poster2);
-						slideTo('.s4');
-					});
-				});
-			});
-		}else{
-			createPoster(function(poster, poster2){
-				app.poster.img1 = poster;
-				app.poster.img2 = poster2;
-				$(".s4 figure img, .s4 .btn3 img, .s5 .btn3 img").remove();
-				$(".s4 figure, .s4 .btn3").append(poster);
-				$(".s5 figure, .s5 .btn3").append(poster2);
-				slideTo('.s4');
-			});
-		};
-	});
-	
-	
+    $(".s3 footer h3 a").on(app.evtClick, function(){
+        setTimeout(function(){ app.sound.click.play(); });
+        if(!app.poster.label || !app.poster.name){ myAlert('请填写您的标签和名字！'); return; }
+
+        if(!app.poster.wordCheck){
+            loadingShow();
+            checkWord(app.poster.label, function(r){
+
+                checkWord(app.poster.name, function(r){
+
+                    app.poster.wordCheck = true;
+                    createPoster(function(poster, poster2){
+                        app.poster.img1 = poster;
+                        app.poster.img2 = poster2;
+                        $(".s4 figure img, .s4 .btn3 img, .s5 .btn3 img").remove();
+                        $(".s4 figure, .s4 .btn3").append(poster);
+                        $(".s5 figure, .s5 .btn3").append(poster2);
+                        slideTo('.s4');
+
+
+                        // console.log(poster,poster.src)
+
+                        var blob = dataURItoBlob(poster2.src);
+                        var formData = new FormData();
+                        formData.append('image', blob);
+
+                        $.ajax({
+
+                            url: 'http://events.daiplanet.com/api/dress/api/v1/upload/image',
+                            type: 'post',
+                            data: formData,
+                            async: false,
+                            cache: false,
+                            contentType: false,
+                            processData: false,
+                            success:function(res) {
+                                // console.log(res)
+
+
+                                title = $(".s3>center input:eq(0)").val().trim() ? '我是'+$(".s3>center input:eq(0)").val().trim() : '再见六一 让我再次介绍我自己';
+                                imglink= res?res:'http://daiplanet.villagenes.com/img/dress/img/wx-share.png';
+
+                                wx_share(title, imglink);
+
+                            },
+                            error : function() {
+                                alert("异常！");
+                            }
+                        });
+                    });
+                });
+            });
+        }else{
+            createPoster(function(poster, poster2){
+                app.poster.img1 = poster;
+                app.poster.img2 = poster2;
+                $(".s4 figure img, .s4 .btn3 img, .s5 .btn3 img").remove();
+                $(".s4 figure, .s4 .btn3").append(poster);
+                $(".s5 figure, .s5 .btn3").append(poster2);
+                slideTo('.s4');
+
+                var blob = dataURItoBlob(poster2.src);
+                var formData = new FormData();
+                formData.append('image', blob);
+
+                $.ajax({
+
+                    url: 'http://events.daiplanet.com/api/dress/api/v1/upload/image',
+                    type: 'post',
+                    data: formData,
+                    async: false,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success:function(res) {
+                        console.log(res);
+                        title = $(".s3>center input:eq(0)").val().trim() ? '我是'+$(".s3>center input:eq(0)").val().trim() : '再见六一 让我再次介绍我自己';
+                        imglink= res?res:'http://daiplanet.villagenes.com/img/dress/img/wx-share.png';
+
+                        wx_share(title, imglink);
+                    },
+                    error : function() {
+                        alert("异常！");
+                    }
+                });
+            });
+        };
+    });
+
+    function  dataURItoBlob (base64Data) {
+        var byteString;
+        if (base64Data.split(',')[0].indexOf('base64') >= 0)
+            byteString = atob(base64Data.split(',')[1]);
+        else
+            byteString = unescape(base64Data.split(',')[1]);
+        var mimeString = base64Data.split(',')[0].split(':')[1].split(';')[0];
+        var ia = new Uint8Array(byteString.length);
+        for (var i = 0; i < byteString.length; i++) {
+            ia[i] = byteString.charCodeAt(i);
+        }
+        return new Blob([ia], {type: mimeString});
+    }
+
+
 	/*s4 & s5*/
 	$(".s4 .btn6").on(app.evtClick, function(){
 		slideTo('.s3', true);
@@ -565,3 +633,4 @@ console.log('上衣ID='+about,'裤子='+temp)
 	//$(window).one(app.evtUp, function(){ app.sound.bg.play();  });
 	
 };
+

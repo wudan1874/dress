@@ -27,23 +27,25 @@ app.poster = {
         ],
         [
             [2,1,3,4,5,6,7,8],
-            [10,9,11,12,13,14,15,16]
+            [10,9,11,12,13,14,15,16,17]
         ],
         [
             [2,1,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22],
-            [2,1,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
+            [2,1,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]
         ],
         [
             [3,1,4,5,6,7,8,9,10,11],
-            [2,12,13,14,15,16,17,18,19,20,21,22]
+            [2,12,13,14,15,16,17,18,19,20,21,22,23]
         ],
         [
             [1,2,3,4,5,6,7,8],
-            [9,10,11,12,13,14,15,16]
+            [9,10,11,12,13,14,15,16,17]
         ],
         [
-            [1,2,3,4,5,8,9,13,19,20,21,23,24,25,26,27,28,29,30,31,32,33,34,36,37,38,39,40,41,43,44,6,7,10,11,12,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,35,42,45,46,47,48,49,50],
-            [1,2,3,4,5,8,9,13,19,20,21,23,24,25,26,27,28,29,30,31,32,33,34,36,37,38,39,40,41,43,44,6,7,10,11,12,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,35,42,45,46,47,48,49,50],
+
+            [1,2,3,4,5,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51],
+            [1,2,3,4,5,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51],
+
 
         ],
 
@@ -52,7 +54,7 @@ app.poster = {
 		{},
 		{},
 		{},
-		{22:11,14:11,17:11,21:11},
+		{22:11,14:11,17:11,12:11,23:11,18:11},
 		{},
 		{},
 	],
@@ -224,22 +226,22 @@ function getValue(name){
 var fromshare = getValue('from');
 function share(){
     var _url = window.location.href;
-    if(/detail\.html/.test(_url)&&/if_share/.test(_url)){
-        _url = _url.split('?')[0]+'?albumId='+util.getValue('albumId')+'__1';
-    }else if(/singerId/.test(_url)&&/if_share/.test(_url)){
-        _url = _url.split('?')[0]+'?singerId='+util.getValue('singerId')+'__1';
-    }else if(/news/.test(_url)&&/if_share/.test(_url)){
-        _url = _url.split('?')[0]+'?id='+util.getValue('id')+'__1';
-    }else{
-        _url = _url.split('?')[0];
-    }
+    // if(/detail\.html/.test(_url)&&/if_share/.test(_url)){
+    //     _url = _url.split('?')[0]+'?albumId='+util.getValue('albumId')+'__1';
+    // }else if(/singerId/.test(_url)&&/if_share/.test(_url)){
+    //     _url = _url.split('?')[0]+'?singerId='+util.getValue('singerId')+'__1';
+    // }else if(/news/.test(_url)&&/if_share/.test(_url)){
+    //     _url = _url.split('?')[0]+'?id='+util.getValue('id')+'__1';
+    // }else{
+    //     _url = _url.split('?')[0];
+    // }
 
     if(fromshare){
             window.location.href=_url;
     }else{
         var tit = tit?tit:"让我再次介绍我自己";
-        var img = img?img:'http://wap.zhengzai.tv/pages/strawberry2018/cover.jpg';
-        var des = des?des:"2018以「我」出发，一起大不同";
+        var img = img?img:'http://daiplanet.villagenes.com/img/dress/img/wx-share.png';
+        var des = des?des:"再见六一 「我」的呆星球";
         var url=url?url:_url;
         var zzurl="http://user.zhengzai.tv";
         var url_ = zzurl+'/api/open/wx/sign?url='+_url;
@@ -328,4 +330,4 @@ function share(){
     }
 }
 
-share();
+// share();

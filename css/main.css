@@ -28,19 +28,19 @@
 .alert_out { -webkit-animation: ani-alert1b 0.1s 0.1s linear both;}
 .alert_out>article { -webkit-animation: ani-alert2b 0.15s both; }
 @-webkit-keyframes ani-alert1{
-	0%{ opacity: 0; transform: translateZ(0);}
-	100%{ opacity: 1; transform: translateZ(0);}
+    0%{ opacity: 0; transform: translateZ(0);}
+    100%{ opacity: 1; transform: translateZ(0);}
 }
 @-webkit-keyframes ani-alert1b{
-	100%{ opacity: 0;}
+    100%{ opacity: 0;}
 }
 @-webkit-keyframes ani-alert2{
-	0%{ transform:translateY(0%); opacity: 0;}
-	100%{ transform:translateY(-50%); opacity: 1;}
+    0%{ transform:translateY(0%); opacity: 0;}
+    100%{ transform:translateY(-50%); opacity: 1;}
 }
 @-webkit-keyframes ani-alert2b{
-	0%{ transform:translateY(-50%); opacity: 1;}
-	100%{ transform:translateY(-30%); opacity: 0;}
+    0%{ transform:translateY(-50%); opacity: 1;}
+    100%{ transform:translateY(-30%); opacity: 0;}
 }
 
 
@@ -48,19 +48,24 @@
 [class^=btn], [class*=btn] { display: inline-block; position: relative; vertical-align: middle; width: 18%; font-size: 1.1em; line-height: 2em; margin: 0 4%; font-weight: bold; text-align: center; white-space: nowrap;}
 [class^=btn]:before, [class*=btn]:before { content: ""; display: block; width: 100%; padding-bottom: 50%; border-radius: 15%; background-color: #fcf3e8; border: solid #222 0.2em; margin-left: -0.2em;}
 [class^=btn]:after, [class*=btn]:after { content: ""; position: absolute; top: 0; left: 0; width: 100%; padding-bottom: 100%; margin-top: -0.8em; background: url(../img/btn.png) no-repeat 0 9999%; background-size: 100% auto; }
-[class^=btn]:active:before, [class*=btn]:active:before { background-color: #bbe9fe;} 
-.btn1:after { background-position-y: 0%; margin-left: -3%;}
-.btn2:after { background-position-y: 10%; margin-left: 3%;}
+.s4 [class^=btn]:after, [class*=btn]:after,.s2  [class^=btn]:after, [class*=btn]:after {  margin-top:0; }
+[class^=btn]:active:before, [class*=btn]:active:before { background-color: #bbe9fe;}
+.btn1:after { background-position-y: 2%; margin-left: -3%;}
+.btn2:after { background-position-y: 12%; margin-left: 3%;}
 .btn3:after { background-position-y: 50%;}
 .btn3 img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; opacity: 0;}
 .btn4:after { background-position-y: 60%;}
 .btn5:after { background-position-y: 70%;}
 .btn6:after { background-position-y: 90%;}
+.s5  [class^=btn1]:after{
+    margin-top: 1.2em;
+}
+
 
 
 /*section*/
-.s1 h2 { top: 3%; font-size: 1.5em; font-weight: bold; text-align: center; white-space: nowrap;}
-.s1 h2 i { display: block; width: 45%; padding-bottom: 31%; margin: 15% auto -6%; background-image: url(../img/logo.png);}
+.s1 h2 { top: 10%; font-size: 1.5em; font-weight: bold; text-align: center; white-space: nowrap;}
+.s1 h2 i { display: block; width: 45%; padding-bottom: 31%; margin: 15% auto -6%; background-image: url(../img/indexTitle.png);}
 .s1 center { top: 50%; margin-top: -20%;}
 .s1 center h3 a { display: inline-block; position: relative; width: 31.25%; padding-bottom: 31.25%; margin: 0 4%; background: url(../img/sex.png) no-repeat 0 0; background-size: 200% auto;}
 .s1 center h3 a+a { background-position-y: 100%;}
@@ -93,7 +98,7 @@
 .s2 ul li { box-sizing: content-box; width: 66%; padding-bottom: 66%;  margin: 18% auto; border-radius: 1em; overflow: hidden; background-image: url(../img/item.png);}
 .s2 ul li.curr { background-color: #fadd79;}
 .s2 ul li.off { opacity: 0.3;}
-.s2 footer { top: 57%; text-align: right; margin: 54% 0 0 -10%;}
+.s2 footer { top: 52%; text-align: right; margin: 54% 0 0 -10%;}
 .s2 footer a { width: 16%; margin: 0 4.5%; line-height: 2.2em;}
 .s2 figure { z-index: 0; left: auto; right: 0; top: 55%; margin-top: -83%; width: 72%; padding-bottom: 132.8%; }
 .s2 figure p { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
@@ -133,10 +138,10 @@
 .s3 figure .name>span { display: inline-block; text-align: left; transform: scale(1); transform-origin: 50% 0;}
 .s3 figure .name big { font-size: 1.2em;}
 .s3 figure .name big font { margin-right: 2.5em;}
-.s3 figure.role1 .name big font:empty:after { content: '曾經的六一扛把子'; color: #ccc;}
-.s3 figure.role2 .name big font:empty:after { content: '曾經的幼兒園一枝花'; color: #ccc;}
-.s3 figure .name big font:empty:before { -webkit-animation: flashLoop1 0.8s step-end infinite both; content: '┃'; margin: 0em;}
-.s3 figure .name small { font-size: 0.6em; }
+.s3 figure.role1 .name big font:empty:after { content: '曾经的六一扛把子'; color: #ccc;}
+.s3 figure.role2 .name big font:empty:after { content: '曾经的幼儿园一枝花'; color: #ccc;}
+.s3 figure .name big font:empty:before { -webkit-animation: flashLoop1 0.8s step-end infinite both; content: '┃'; margin: -0.1em;}
+.s3 figure .name small { font-size: 0.8em; }
 .s3 figure .name small font { margin-left: 0.5em;}
 .s3 figure.role1 .name small font:empty:after { content: '光著膀子喝可樂'; color: #ccc;}
 .s3 figure.role2 .name small font:empty:after { content: '健美褲提到腰上劈叉'; color: #ccc;}
@@ -171,12 +176,13 @@
 .s5 figure { width: 78%; padding-bottom: 78%; margin: -50% 0 0 11%;}
 
 .share { background-color: #595758;}
-.share center { height: 100%; background-image: url(../img/share.png);}
+.share center { height: 100%;}
+.share center img{ width: 100%;margin-top: -0.2em;}
 
 /*.s2 ol .look a:before{*/
-    /*background: #fcf3e8 url(../img/item-class.png) no-repeat 0 0!important;*/
-    /*background-size: 100%;*/
+/*background: #fcf3e8 url(../img/item-class.png) no-repeat 0 0!important;*/
+/*background-size: 100%;*/
 /*}*/
 /*.s2 ol li.hair a:before{*/
-    /*background: #fcf3e8 url(../img/item-class.png) no-repeat 0 16.7% ;*/
+/*background: #fcf3e8 url(../img/item-class.png) no-repeat 0 16.7% ;*/
 /*}*/
